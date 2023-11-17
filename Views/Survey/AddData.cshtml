@@ -1,0 +1,135 @@
+﻿@model MVC_APU_FlowerShop2023.Models.Survey
+<html>
+<head>
+    <style>
+        /* Center the form */
+        form {
+            width: 60%;
+            margin: 0 auto;
+            border: 1px solid #ddd; /* Add border to the form */
+            padding: 20px; /* Add padding for spacing inside the form */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
+            border-radius: 8px; /* Rounded corners */
+        }
+
+        /* Style the table */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        /* Style table headers */
+        th {
+            text-align: left;
+            padding: 10px;
+        }
+
+        /* Style input fields */
+        input, select {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+            margin-bottom: 10px;
+        }
+
+            /* Style smaller submit button */
+            input[type="submit"] {
+                background-color: #4CAF50;
+                color: white;
+                padding: 8px;
+                border: none;
+                cursor: pointer;
+            }
+
+        /* Add spacing between form elements */
+        td {
+            padding: 10px;
+        }
+
+        /* Style error messages */
+        span.field-validation-error {
+            color: red;
+            font-size: 14px;
+        }
+
+        /* Add a bit of styling to the header */
+        h1 {
+            color: #4CAF50;
+            text-align: center;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px;
+            border: none;
+            cursor: pointer;
+            width: auto; /* Allow the button to shrink to its content */
+            margin-right: 10px; /* Add margin to the right for spacing */
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <h1>Survey Questions</h1>
+        <hr />
+        <form asp-action="AddData" method="post">
+            <table>
+                <tr>
+                    <th><label asp-for="Student_ID"></label> </th>
+                    <td><input asp-for="Student_ID" required /></td>
+                    <td><span asp-validation-for="Student_ID"></span></td>
+                </tr>
+                <tr>
+                    <th><label asp-for="SurveyDate"></label> </th>
+                    <td><input asp-for="SurveyDate" required /></td>
+                    <td><span asp-validation-for="SurveyDate"></span></td>
+                </tr>
+                <tr>
+                    <th><label asp-for="Q1">1. What is your favorite Subject?</label> </th>
+                    <td><input asp-for="Q1" required /></td>
+                    <td><span asp-validation-for="Q1"></span></td>
+                </tr>
+                <tr>
+                    <th><label asp-for="Q2">2. What is your least favorite Subject?</label> </th>
+                    <td><input asp-for="Q2" required /></td>
+                    <td><span asp-validation-for="Q2"></span></td>
+                </tr>
+                <tr>
+                    <th><label asp-for="Q3">3. Are there adequate resources in your school for your favorite subject?</label></th>
+                    <td>
+                        <select asp-for="Q3" asp-items="Html.GetEnumSelectList<MVC_APU_FlowerShop2023.Models.LikertScale>()" required>
+                            <option value="">Select</option>
+                        </select>
+                    </td>
+                    <td><span asp-validation-for="Q3"></span></td>
+                </tr>
+                <tr>
+                    <th><label asp-for="Q4">4. Are the materials you learn in school useful?</label></th>
+                    <td>
+                        <select asp-for="Q4" asp-items="Html.GetEnumSelectList<MVC_APU_FlowerShop2023.Models.LikertScale>()" required>
+                            <option value="">Select</option>
+                        </select>
+                    </td>
+                    <td><span asp-validation-for="Q4"></span></td>
+                </tr>
+                <tr>
+                    <th><label asp-for="Q5">5. Do you feel like dropping out in the future?</label></th>
+                    <td>
+                        <select asp-for="Q5" asp-items="Html.GetEnumSelectList<MVC_APU_FlowerShop2023.Models.LikertScale>()" required>
+                            <option value="">Select</option>
+                        </select>
+                    </td>
+                    <td><span asp-validation-for="Q5"></span></td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input type="submit" name="submit" value="Submit" />
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </center>
+</body>
+</html>

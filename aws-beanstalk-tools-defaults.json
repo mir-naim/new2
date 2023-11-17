@@ -1,0 +1,20 @@
+
+{
+    "region" : "us-east-1",
+    "configuration" : "Debug",
+    "framework"     : "net7.0",
+    "self-contained" : true,
+    "application"    : "MVCAPUFlowerShop2023",
+    "environment"    : "MVCAPUFlowerShop2023-dev-tp057855",
+    "enable-xray"    : true,
+    "enhanced-health-type" : "enhanced",
+    "additional-options"   : "\"aws:autoscaling:launchconfiguration,SecurityGroups\"=\"sg-02e4c779d9cd7699d,sg-03e8babeefa8a5737\";\"aws:ec2:vpc,Subnets\"=\"subnet-0d831a027411c9063\"",
+    "solution-stack"       : "64bit Amazon Linux 2 v2.6.1 running .NET Core",
+    "environment-type"     : "SingleInstance",
+    "cname"                : "mvcapuflowershop2023-dev-tp057855",
+    "instance-type"        : "t2.micro",
+    "key-pair"             : "",
+    "instance-profile"     : "LabInstanceProfile",
+    "service-role"         : "LabRole",
+    "proxy-server"         : "nginx"
+}
